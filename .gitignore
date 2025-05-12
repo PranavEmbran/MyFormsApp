@@ -38,5 +38,5 @@ packages/
 *.DotSettings.user
 
 ## Windows Forms designer files
-*.resx
-*.Designer.cs
+# *.resx
+# *.Designer.cs

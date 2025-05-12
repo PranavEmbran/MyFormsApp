@@ -17,10 +17,12 @@ namespace MyFormsApp
 {
     public partial class Display : Form
     {
+
         public Display()
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.Display_Load);
+
 
         }
 
@@ -75,6 +77,27 @@ namespace MyFormsApp
                     mainDataGridView.Rows.RemoveAt(this.mainDataGridView.SelectedRows[0].Index);
                 }
             }
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            //Update updt1 = new Update();
+            //updt1.ShowDialog();
+            if (mainDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = mainDataGridView.SelectedRows[0];
+                string studentId = selectedRow.Cells["StudentId"].Value.ToString();
+
+                var updateForm = new Update();
+                updateForm.StudentIdToLoad = studentId;
+                updateForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to update.", "No Selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     }
 }

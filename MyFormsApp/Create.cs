@@ -302,7 +302,7 @@ namespace MyFormsApp
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            {
+            //{
                 string email = emailTextBox.Text.Trim();
 
                 if (IsValidEmail(email))
@@ -316,7 +316,7 @@ namespace MyFormsApp
                     lblResult.ForeColor = System.Drawing.Color.Red;
                 }
 
-            }
+            //}
         }
         private bool IsValidEmail(string email)
         {
