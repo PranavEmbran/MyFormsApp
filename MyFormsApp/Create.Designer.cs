@@ -61,9 +61,11 @@
             this.phoneLabel = new System.Windows.Forms.Label();
             this.dobLabel = new System.Windows.Forms.Label();
             this.dobPicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.genderPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // studentLabel
@@ -299,7 +301,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.displayButton);
             this.panel1.Controls.Add(this.lblResult);
             this.panel1.Controls.Add(this.emailTextBox);
@@ -330,7 +333,7 @@
             this.panel1.Controls.Add(this.studentLabel);
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 654);
+            this.panel1.Size = new System.Drawing.Size(447, 654);
             this.panel1.TabIndex = 0;
             // 
             // displayButton
@@ -412,19 +415,28 @@
             this.dobPicker.Size = new System.Drawing.Size(134, 20);
             this.dobPicker.TabIndex = 22;
             // 
-            // comboBox1
+            // pictureBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(273, 521);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 31;
+            this.pictureBox1.Location = new System.Drawing.Point(318, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 126);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(341, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 657);
+            this.ClientSize = new System.Drawing.Size(451, 657);
             this.Controls.Add(this.panel1);
             this.Name = "Create";
             this.Text = "Form1";
@@ -432,6 +444,7 @@
             this.genderPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,7 +483,8 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button displayButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
