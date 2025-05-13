@@ -52,6 +52,7 @@
             this.passLabel = new System.Windows.Forms.Label();
             this.cgpaTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.displayButton = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@
             this.phoneLabel = new System.Windows.Forms.Label();
             this.dobLabel = new System.Windows.Forms.Label();
             this.dobPicker = new System.Windows.Forms.DateTimePicker();
-            this.displayButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.genderPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -298,6 +299,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.displayButton);
             this.panel1.Controls.Add(this.lblResult);
             this.panel1.Controls.Add(this.emailTextBox);
@@ -330,6 +332,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(310, 654);
             this.panel1.TabIndex = 0;
+            // 
+            // displayButton
+            // 
+            this.displayButton.Location = new System.Drawing.Point(209, 572);
+            this.displayButton.Name = "displayButton";
+            this.displayButton.Size = new System.Drawing.Size(75, 23);
+            this.displayButton.TabIndex = 30;
+            this.displayButton.Text = "Display";
+            this.displayButton.UseVisualStyleBackColor = true;
+            this.displayButton.Click += new System.EventHandler(this.displayButton_Click);
             // 
             // lblResult
             // 
@@ -400,15 +412,13 @@
             this.dobPicker.Size = new System.Drawing.Size(134, 20);
             this.dobPicker.TabIndex = 22;
             // 
-            // displayButton
+            // comboBox1
             // 
-            this.displayButton.Location = new System.Drawing.Point(209, 572);
-            this.displayButton.Name = "displayButton";
-            this.displayButton.Size = new System.Drawing.Size(75, 23);
-            this.displayButton.TabIndex = 30;
-            this.displayButton.Text = "Display";
-            this.displayButton.UseVisualStyleBackColor = true;
-            this.displayButton.Click += new System.EventHandler(this.displayButton_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(273, 521);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 31;
             // 
             // Create
             // 
@@ -460,6 +470,7 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button displayButton;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

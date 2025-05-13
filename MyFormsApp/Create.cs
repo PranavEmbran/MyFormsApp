@@ -48,6 +48,9 @@ namespace MyFormsApp
         {
 
         }
+        //******************************
+        // ClearForm() is intented to clear textfields and selections.
+        //******************************
         private void ClearForm()
         {
 
@@ -68,10 +71,11 @@ namespace MyFormsApp
             javaComboBox.Text = "";
             phpComboBox.Text = "";
             cgpaTextBox.Text = "";
+ }
 
-
-
-        }
+        //******************************
+        // submitButton_Click passes the data to be entered into insert into the database.
+        //******************************
         private void submitButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Hello World!");
@@ -179,6 +183,9 @@ namespace MyFormsApp
             }
         }
 
+        //******************************
+        // SaveToDatabase() inserts the data received on submitButton_Click to the database.
+        //******************************
         private void SaveToDatabase(
             string name,
             string id,
@@ -263,6 +270,9 @@ namespace MyFormsApp
 
         }
 
+        //******************************
+        // phoneTextBox_KeyPress here validates that the entered phone number is not more than 10 digits
+        //******************************
         private void phoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -280,6 +290,9 @@ namespace MyFormsApp
             }
         }
 
+        //******************************
+        // clearButton_Click uses ClearForm() to clear textfields and selections.
+        //******************************
         private void clearButton_Click(object sender, EventArgs e)
         {
             ClearForm();
@@ -300,6 +313,9 @@ namespace MyFormsApp
 
         }
 
+        //******************************
+        // textBox1_TextChanged_1 validates whether the entered text has a valid email format using the method IsValidEmail().
+        //******************************
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             //{
@@ -318,6 +334,10 @@ namespace MyFormsApp
 
             //}
         }
+
+        //******************************
+        // IsValidEmail() is a method to check whether the entered text has a valid email format.
+        //******************************
         private bool IsValidEmail(string email)
         {
             try
@@ -331,11 +351,15 @@ namespace MyFormsApp
             }
         }
 
+
         private void cSharpComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        //******************************
+        // displayButton_Click opens the Display window by creating and using an instance of Display().
+        //******************************
         private void displayButton_Click(object sender, EventArgs e)
         {
             Display disp1 = new Display();
@@ -356,12 +380,14 @@ namespace MyFormsApp
 
     } 
 }
-    public class getGradePoint
+
+
+public class getGradePoint
     {
-        
-        //The method getPoint receives the grade of a subject as parameter
-        //and  returns the corresponding grade point.
-        public decimal getPoint(String grade)
+    //******************************
+    //The method getPoint receives the grade of a subject as parameter and  returns the corresponding grade point.
+    //******************************
+    public decimal getPoint(String grade)
         {
 
             decimal point = 0;

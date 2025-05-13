@@ -30,6 +30,10 @@ namespace MyFormsApp
 
         }
 
+        //******************************
+        // Update_Load() method loads the Update form, whlie using the LoadStudentData() method to
+        // prefill the form with data to be updated corresponding to the selected row.
+        //******************************
         private void Update_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(StudentIdToLoad))
@@ -38,6 +42,9 @@ namespace MyFormsApp
             }
         }
 
+        //******************************
+        // LoadStudentData() method to prefills the form with data from database.
+        //******************************
         private void LoadStudentData(string studentId)
         {
             string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, DbFileName);
@@ -92,6 +99,9 @@ namespace MyFormsApp
                 }
             }
         }
+        //******************************
+        // emailTextBox_TextChanged validates whether the entered text has a valid email format using the method IsValidEmail().
+        //******************************
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -107,6 +117,10 @@ namespace MyFormsApp
                 lblResult.ForeColor = System.Drawing.Color.Red;
             }
         }
+
+        //******************************
+        // IsValidEmail() is a method to check whether the entered text has a valid email format.
+        //******************************
         private bool IsValidEmail(string email)
         {
             try
@@ -125,6 +139,9 @@ namespace MyFormsApp
 
         }
 
+        //******************************
+        // phoneTextBox_KeyPress here validates that the entered phone number is not more than 10 digits
+        //******************************
         private void phoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -142,10 +159,16 @@ namespace MyFormsApp
             }
         }
 
+        //******************************
+        // clearButton_Click uses ClearForm() to clear textfields and selections.
+        //******************************
         private void clearButton_Click(object sender, EventArgs e)
         {
             ClearForm();
         }
+        //******************************
+        // ClearForm() is intented to clear textfields and selections.
+        //******************************
         private void ClearForm()
         {
 
@@ -168,13 +191,9 @@ namespace MyFormsApp
             cgpaTextBox.Text = "";
         }
 
-
-
-        //private void submitButton_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
+        //******************************
+        // updtBtn_Click passes the updated data to be updated in the database.
+        //******************************
         private void updtBtn_Click(object sender, EventArgs e)
         {
             if (cSharpComboBox?.SelectedItem != null)
@@ -259,6 +278,9 @@ namespace MyFormsApp
             }
         }
 
+        //******************************
+        // SaveToDatabase() updates the database with the updated data received on updtBtn_Click.
+        //******************************
         private void SaveToDatabase(
             string name,
             string id,
@@ -327,8 +349,9 @@ namespace MyFormsApp
 public class getGrade
 {
 
-    //The method getPoint receives the grade of a subject as parameter
-    //and  returns the corresponding grade point.
+    //******************************
+    //The method getGradeLetter receives the grade point of a subject as parameter and  returns the corresponding grade letter.
+    //******************************
     public string getGradeLetter(decimal point)
     {
 

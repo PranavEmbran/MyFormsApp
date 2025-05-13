@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+
 
 //using System.Data;
 //using System.Data.SqlClient;
@@ -17,7 +19,7 @@ namespace MyFormsApp
 {
     public partial class Display : Form
     {
-
+        public static string filterByCGPAComboBoxContent = "ALL";
         public Display()
         {
             InitializeComponent();
@@ -26,13 +28,71 @@ namespace MyFormsApp
 
         }
 
+        //******************************
+        // Display_Load method uses Load_Data() method to fetche data from the database and bind/show it in the DataGridView.
+        //******************************
         private void Display_Load(object sender, EventArgs e)
+        {
+            Load_Data();
+        }
+        //******************************
+        //Load_Data() method to fetches data from the database and binds/shows it in the DataGridView.
+        //******************************
+        //private void Load_Data()
+        //{
+        //    string connectionString = "Data Source=infodb.db;Version=3;";
+        //    using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        string query = "SELECT * FROM Registrations";
+        //        SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conn);
+        //        DataTable dt = new DataTable();
+        //        adapter.Fill(dt);
+        //        // Now bind `dt` to your DataGridView or controls
+        //        mainDataGridView.DataSource = dt;
+        //    }
+        //}
+
+        //******************************
+        //Load_Data() method to fetches data from the database and binds/shows it in the DataGridView.
+        //******************************
+        private void Load_Data()
         {
             string connectionString = "Data Source=infodb.db;Version=3;";
             using (SQLiteConnection conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM Registrations";
+                string query;
+
+                if (filterByCGPAComboBoxContent == "5")
+                {
+                    query = "SELECT * FROM Registrations WHERE Cgpa = 5";
+                }
+                else if (filterByCGPAComboBoxContent == ">=4")
+                {
+                    query = "SELECT * FROM Registrations WHERE Cgpa >= 4";
+                }
+                else if (filterByCGPAComboBoxContent == ">=3")
+                {
+                    query = "SELECT * FROM Registrations WHERE Cgpa >= 3";
+                }
+                else if (filterByCGPAComboBoxContent == ">=2")
+                {
+                    query = "SELECT * FROM Registrations WHERE Cgpa >= 2";
+                }
+                else if (filterByCGPAComboBoxContent == ">=1")
+                {
+                    query = "SELECT * FROM Registrations WHERE Cgpa >= 1";
+                }
+                else if (filterByCGPAComboBoxContent == "0")
+                {
+                    query = "SELECT * FROM Registrations WHERE Cgpa = 0";
+                }
+                else 
+                {
+                    query = "SELECT * FROM Registrations"; 
+                }
+                    
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -51,6 +111,9 @@ namespace MyFormsApp
 
         }
 
+        //******************************
+        // deleteRowButton_Click deletes the row selected in theDataGridView from the database.
+        //******************************
         private void deleteRowButton_Click(object sender, EventArgs e)
         {
             if (this.mainDataGridView.SelectedRows.Count > 0)
@@ -79,6 +142,9 @@ namespace MyFormsApp
             }
         }
 
+        //******************************
+        // updateBtn_Click opens the Update window while passing the StudentId of the selected row to Update().
+        //******************************
         private void updateBtn_Click(object sender, EventArgs e)
         {
             //Update updt1 = new Update();
@@ -91,12 +157,41 @@ namespace MyFormsApp
                 var updateForm = new Update();
                 updateForm.StudentIdToLoad = studentId;
                 updateForm.ShowDialog();
+
+                Load_Data();
             }
             else
             {
                 MessageBox.Show("Please select a row to update.", "No Selection",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+        }
+
+
+        //******************************
+        // filterByGradeComboBox_SelectedIndexChanged() Loads/refreshes the data grid and
+        // updates the static variable filterByCGPAComboBoxContent,
+        // each time the combobox selection is changed.
+        //******************************
+        private void filterByGradeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (filterByCGPAComboBox?.SelectedItem != null)
+            {
+                filterByCGPAComboBoxContent = filterByCGPAComboBox.SelectedItem.ToString();
+                Load_Data();
+
+            }
+            else
+            {
+                //filterByCGPAComboBoxContent = string.Empty;
+                filterByCGPAComboBoxContent = "ALL";
+            }
+        }
+
+        private void filterByGradeLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
