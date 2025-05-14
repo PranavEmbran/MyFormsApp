@@ -52,6 +52,8 @@
             this.passLabel = new System.Windows.Forms.Label();
             this.cgpaTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.photoBtn = new System.Windows.Forms.Button();
+            this.photoBox = new System.Windows.Forms.PictureBox();
             this.displayButton = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -61,11 +63,10 @@
             this.phoneLabel = new System.Windows.Forms.Label();
             this.dobLabel = new System.Windows.Forms.Label();
             this.dobPicker = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.genderPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.photoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // studentLabel
@@ -301,8 +302,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.photoBtn);
+            this.panel1.Controls.Add(this.photoBox);
             this.panel1.Controls.Add(this.displayButton);
             this.panel1.Controls.Add(this.lblResult);
             this.panel1.Controls.Add(this.emailTextBox);
@@ -335,6 +336,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(447, 654);
             this.panel1.TabIndex = 0;
+            // 
+            // photoBtn
+            // 
+            this.photoBtn.Location = new System.Drawing.Point(318, 187);
+            this.photoBtn.Name = "photoBtn";
+            this.photoBtn.Size = new System.Drawing.Size(98, 23);
+            this.photoBtn.TabIndex = 33;
+            this.photoBtn.Text = "Upload Photo";
+            this.photoBtn.UseVisualStyleBackColor = true;
+            this.photoBtn.Click += new System.EventHandler(this.photoBtn_Click);
+            // 
+            // photoBox
+            // 
+            this.photoBox.Location = new System.Drawing.Point(318, 46);
+            this.photoBox.Name = "photoBox";
+            this.photoBox.Size = new System.Drawing.Size(100, 126);
+            this.photoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.photoBox.TabIndex = 32;
+            this.photoBox.TabStop = false;
             // 
             // displayButton
             // 
@@ -415,22 +435,9 @@
             this.dobPicker.Size = new System.Drawing.Size(134, 20);
             this.dobPicker.TabIndex = 22;
             // 
-            // pictureBox1
+            // openFileDialog1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(318, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 126);
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(341, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "photoOpenFileDialog";
             // 
             // Create
             // 
@@ -444,7 +451,7 @@
             this.genderPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.photoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,8 +490,9 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button displayButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox photoBox;
+        private System.Windows.Forms.Button photoBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

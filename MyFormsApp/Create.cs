@@ -368,6 +368,27 @@ namespace MyFormsApp
             //this.Hide();
         }
 
+        //OpenFileDialog photoOpenFileDialog = new OpenFileDialog();
+
+        //******************************
+        // Drag and droped OpenFileDialog from toolbox, to upload image.
+        //******************************
+        private void photoBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog photoOpenFileDialog = new OpenFileDialog())
+            { 
+                if (photoOpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string selectedFile = photoOpenFileDialog.FileName;
+                    photoBox.Image = Image.FromFile(selectedFile);
+                    //******************************
+                    // The size mode property of photoBox was set to zoom.
+                    //******************************
+
+                }
+            }
+        }
+
         private void passLabel_Click(object sender, EventArgs e)
         {
 
