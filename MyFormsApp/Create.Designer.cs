@@ -302,6 +302,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Wheat;
             this.panel1.Controls.Add(this.photoBtn);
             this.panel1.Controls.Add(this.photoBox);
             this.panel1.Controls.Add(this.displayButton);
@@ -349,6 +350,7 @@
             // 
             // photoBox
             // 
+            this.photoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.photoBox.Location = new System.Drawing.Point(318, 46);
             this.photoBox.Name = "photoBox";
             this.photoBox.Size = new System.Drawing.Size(100, 126);

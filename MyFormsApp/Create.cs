@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MyFormsApp
@@ -181,6 +182,19 @@ namespace MyFormsApp
                 MessageBox.Show($"Error saving registration:\n{ex.Message}", "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            try
+            {
+                SaveToDatabase(name, id, dob, email, phone, gender, pwd, cSharp, java, php, cgpa);
+                MessageBox.Show("Registered Successfully!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //ClearForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving registration:\n{ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //******************************
@@ -234,8 +248,20 @@ namespace MyFormsApp
                     cmd.ExecuteNonQuery();
                 }
 
-                // 2) Insert the record
+                // 1) Create table if missing
                 using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                CREATE TABLE IF NOT EXISTS Photos(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ImageData BLOB
+);";
+                cmd.ExecuteNonQuery();
+            }
+
+
+            // 2) Insert the record
+            using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
     INSERT INTO Registrations
@@ -260,6 +286,25 @@ namespace MyFormsApp
 
                     cmd.ExecuteNonQuery();
                 }
+
+                //******************************
+                //
+                //******************************
+                //byte[] imageBytes = ImageToByteArray(image);
+
+                //using (SQLiteConnection connec = new SQLiteConnection("Data Source=mydatabase.db"))
+                ////using (var cmd = conn.CreateCommand())
+                //{
+                //    conn.Open();
+                //    using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (ImageData) VALUES (@Image)", connec))
+                //    {
+                //        cmd.Parameters.AddWithValue("@Image", imageBytes);
+                //        cmd.ExecuteNonQuery();
+                //    }
+                //}
+
+
+
             }
         }
 
@@ -380,11 +425,33 @@ namespace MyFormsApp
                 if (photoOpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     string selectedFile = photoOpenFileDialog.FileName;
-                    photoBox.Image = Image.FromFile(selectedFile);
+                    photoBox.Image = System.Drawing.Image.FromFile(selectedFile);
                     //******************************
                     // The size mode property of photoBox was set to zoom.
                     //******************************
 
+                }
+            }
+        }
+        public byte[] ImageToByteArray(System.Drawing.Image photoBoxPicture)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                photoBoxPicture.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // or .Jpeg
+                return ms.ToArray();
+            }
+        }
+        public void SaveImageToDatabase(System.Drawing.Image image)
+        {
+            byte[] imageBytes = ImageToByteArray(image);
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=mydatabase.db"))
+            {
+                conn.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (ImageData) VALUES (@Image)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Image", imageBytes);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
