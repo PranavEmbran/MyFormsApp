@@ -183,18 +183,7 @@ namespace MyFormsApp
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            try
-            {
-                SaveToDatabase(name, id, dob, email, phone, gender, pwd, cSharp, java, php, cgpa);
-                MessageBox.Show("Registered Successfully!", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //ClearForm();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error saving registration:\n{ex.Message}", "Database Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         //******************************
@@ -248,20 +237,33 @@ namespace MyFormsApp
                     cmd.ExecuteNonQuery();
                 }
 
+                //                // 1) Create table if missing
+                //                using (var cmd = conn.CreateCommand())
+                //                {
+                //                    cmd.CommandText = @"
+                //                CREATE TABLE IF NOT EXISTS Photos(
+                //    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                //    ImageData BLOB
+                //);";
+                //                cmd.ExecuteNonQuery();
+                //            }
                 // 1) Create table if missing
                 using (var cmd = conn.CreateCommand())
                 {
+
                     cmd.CommandText = @"
-                CREATE TABLE IF NOT EXISTS Photos(
+CREATE TABLE IF NOT EXISTS Photos (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
-    ImageData BLOB
-);";
-                cmd.ExecuteNonQuery();
-            }
+    RegistrationId INTEGER NOT NULL,  
+    ImageData BLOB,
+    FOREIGN KEY (RegistrationId) REFERENCES Registrations(Id) ON DELETE CASCADE
+)";
+                    cmd.ExecuteNonQuery();
+                }
 
 
-            // 2) Insert the record
-            using (var cmd = conn.CreateCommand())
+                // 2) Insert the record
+                using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
     INSERT INTO Registrations
@@ -287,21 +289,20 @@ namespace MyFormsApp
                     cmd.ExecuteNonQuery();
                 }
 
-                //******************************
-                //
-                //******************************
-                //byte[] imageBytes = ImageToByteArray(image);
+                //***********************************
+                //***********************************
+                //***********************************
+                long registrationId = conn.LastInsertRowId;
 
-                //using (SQLiteConnection connec = new SQLiteConnection("Data Source=mydatabase.db"))
-                ////using (var cmd = conn.CreateCommand())
-                //{
-                //    conn.Open();
-                //    using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (ImageData) VALUES (@Image)", connec))
-                //    {
-                //        cmd.Parameters.AddWithValue("@Image", imageBytes);
-                //        cmd.ExecuteNonQuery();
-                //    }
-                //}
+                if (photoBox.Image != null)
+                {
+                    //SaveImageToDatabase(photoBox.Image, registrationId, conn);
+                    SaveImageToDatabase(registrationId, photoBox.Image);
+
+                }
+                //***********************************
+                //***********************************
+                //***********************************
 
 
 
@@ -441,15 +442,16 @@ namespace MyFormsApp
                 return ms.ToArray();
             }
         }
-        public void SaveImageToDatabase(System.Drawing.Image image)
+        public void SaveImageToDatabase(long RegistrationId, System.Drawing.Image image)
         {
             byte[] imageBytes = ImageToByteArray(image);
 
-            using (SQLiteConnection conn = new SQLiteConnection("Data Source=mydatabase.db"))
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=infodb.db"))
             {
                 conn.Open();
-                using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (ImageData) VALUES (@Image)", conn))
+                using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (RegistrationId, ImageData) VALUES (@RegistrationId, @Image)", conn))
                 {
+                    cmd.Parameters.AddWithValue("@RegistrationId", RegistrationId);
                     cmd.Parameters.AddWithValue("@Image", imageBytes);
                     cmd.ExecuteNonQuery();
                 }

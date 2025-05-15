@@ -59,12 +59,17 @@
             this.genderLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.studentLabel = new System.Windows.Forms.Label();
+            this.photoBtn = new System.Windows.Forms.Button();
+            this.photoBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.genderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.photoBtn);
+            this.panel1.Controls.Add(this.photoBox);
             this.panel1.Controls.Add(this.updtBtn);
             this.panel1.Controls.Add(this.lblResult);
             this.panel1.Controls.Add(this.emailTextBox);
@@ -94,7 +99,7 @@
             this.panel1.Controls.Add(this.studentLabel);
             this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 654);
+            this.panel1.Size = new System.Drawing.Size(426, 654);
             this.panel1.TabIndex = 1;
             // 
             // updtBtn
@@ -387,11 +392,31 @@
             this.studentLabel.TabIndex = 0;
             this.studentLabel.Text = "Name:";
             // 
+            // photoBtn
+            // 
+            this.photoBtn.Location = new System.Drawing.Point(315, 190);
+            this.photoBtn.Name = "photoBtn";
+            this.photoBtn.Size = new System.Drawing.Size(98, 23);
+            this.photoBtn.TabIndex = 35;
+            this.photoBtn.Text = "Upload Photo";
+            this.photoBtn.UseVisualStyleBackColor = true;
+            this.photoBtn.Click += new System.EventHandler(this.photoBtn_Click);
+            // 
+            // photoBox
+            // 
+            this.photoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.photoBox.Location = new System.Drawing.Point(315, 49);
+            this.photoBox.Name = "photoBox";
+            this.photoBox.Size = new System.Drawing.Size(100, 126);
+            this.photoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.photoBox.TabIndex = 34;
+            this.photoBox.TabStop = false;
+            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 796);
+            this.ClientSize = new System.Drawing.Size(429, 660);
             this.Controls.Add(this.panel1);
             this.Name = "Update";
             this.Text = "Form1";
@@ -399,6 +424,7 @@
             this.panel1.PerformLayout();
             this.genderPanel.ResumeLayout(false);
             this.genderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,5 +462,7 @@
         private System.Windows.Forms.Label genderLabel;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label studentLabel;
+        private System.Windows.Forms.Button photoBtn;
+        private System.Windows.Forms.PictureBox photoBox;
     }
 }

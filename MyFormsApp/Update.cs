@@ -191,6 +191,23 @@ namespace MyFormsApp
             cgpaTextBox.Text = "";
         }
 
+        private void photoBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog photoOpenFileDialog = new OpenFileDialog())
+            {
+                if (photoOpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string selectedFile = photoOpenFileDialog.FileName;
+                    photoBox.Image = System.Drawing.Image.FromFile(selectedFile);
+                    //******************************
+                    // The size mode property of photoBox was set to zoom.
+                    //******************************
+
+                }
+            }
+        }
+
+
         //******************************
         // updtBtn_Click passes the updated data to be updated in the database.
         //******************************
