@@ -251,13 +251,16 @@ namespace MyFormsApp
                 using (var cmd = conn.CreateCommand())
                 {
 
+                    //                    cmd.CommandText = @"
+                    //CREATE TABLE IF NOT EXISTS Photos (
+                    //    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    //    RegistrationId INTEGER NOT NULL,  
+                    //    ImageData BLOB,
+                    //    FOREIGN KEY (RegistrationId) REFERENCES Registrations(Id) ON DELETE CASCADE
+                    //)";
                     cmd.CommandText = @"
 CREATE TABLE IF NOT EXISTS Photos (
-    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-    RegistrationId INTEGER NOT NULL,  
-    ImageData BLOB,
-    FOREIGN KEY (RegistrationId) REFERENCES Registrations(Id) ON DELETE CASCADE
-)";
+    Id INTEGER PRIMARY KEY AUTOINCREMENT, RegistrationId INTEGER NOT NULL, ImageData BLOB, FOREIGN KEY (RegistrationId) REFERENCES Registrations(StudentId) ON DELETE CASCADE )";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -292,7 +295,10 @@ CREATE TABLE IF NOT EXISTS Photos (
                 //***********************************
                 //***********************************
                 //***********************************
-                long registrationId = conn.LastInsertRowId;
+
+                //long registrationId = conn.LastInsertRowId; //use this if Registrations(Id) is used.
+                long registrationId = long.Parse(id); //use this if Registrations(StudentId) is used.
+
 
                 if (photoBox.Image != null)
                 {

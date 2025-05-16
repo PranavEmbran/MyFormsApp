@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using System.Data.SQLite;
 using System.IO;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace MyFormsApp
 {
@@ -191,6 +192,9 @@ namespace MyFormsApp
             cgpaTextBox.Text = "";
         }
 
+        //***********************************
+        //***********************************
+        //***********************************
         private void photoBtn_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog photoOpenFileDialog = new OpenFileDialog())
@@ -206,6 +210,74 @@ namespace MyFormsApp
                 }
             }
         }
+        public byte[] ImageToByteArray(System.Drawing.Image photoBoxPicture)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                photoBoxPicture.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // or .Jpeg
+                return ms.ToArray();
+            }
+        }
+        public void SaveImageToDatabase(long RegistrationId, System.Drawing.Image image)
+        {
+            byte[] imageBytes = ImageToByteArray(image);
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=infodb.db"))
+            {
+                conn.Open();
+                //######################################################
+                int check = 0;
+
+                using (SQLiteCommand cmd = new SQLiteCommand("SELECT RegistrationId FROM Photos;", conn))
+                {
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            long regId = reader.GetInt64(0); // Assuming RegistrationId is of type INTEGER in DB
+
+                            if (RegistrationId == regId)
+                            {
+                                check = 1;
+                                break; // Exit early if match found
+                            }
+                        }
+                    }
+                }
+
+                if (check == 1)
+                {
+                    Console.WriteLine("Registration ID exists.");
+                    using (SQLiteCommand cmd = new SQLiteCommand("UPDATE Photos SET ImageData = @Image WHERE RegistrationId = @RegistrationId", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@RegistrationId", RegistrationId);
+                        cmd.Parameters.AddWithValue("@Image", imageBytes);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Registration ID not found.");
+                    using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (RegistrationId, ImageData) VALUES (@RegistrationId, @Image)", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@RegistrationId", RegistrationId);
+                        cmd.Parameters.AddWithValue("@Image", imageBytes);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                //######################################################
+
+                //using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Photos (RegistrationId, ImageData) VALUES (@RegistrationId, @Image)", conn))
+                //{
+                //    cmd.Parameters.AddWithValue("@RegistrationId", RegistrationId);
+                //    cmd.Parameters.AddWithValue("@Image", imageBytes);
+                //    cmd.ExecuteNonQuery();
+                //}
+            }
+        }
+        //***********************************
+        //***********************************
+        //***********************************
 
 
         //******************************
@@ -358,9 +430,26 @@ namespace MyFormsApp
 
                     cmd.ExecuteNonQuery();
                 }
-            
+                //***********************************
+                //***********************************
+                //***********************************
+
+                //long registrationId = conn.LastInsertRowId; //use this if Registrations(Id) is used.
+                long registrationId = long.Parse(id); //use this if Registrations(StudentId) is used.
+
+                if (photoBox.Image != null)
+                {
+                    //SaveImageToDatabase(photoBox.Image, registrationId, conn);
+                    SaveImageToDatabase(registrationId, photoBox.Image);
+
+                }
+                //***********************************
+                //***********************************
+                //***********************************
+
+            }
         }
-        }
+
     }
 }
 public class getGrade
