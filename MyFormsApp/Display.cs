@@ -1,4 +1,17 @@
-﻿using System;
+﻿#region File Header
+/*
+Copyright Hodo. 2025
+All rights are reserved. Reproduction or transmission in whole or in part, in any form or by any means, electronic, mechanical or otherwise, is prohibited without the prior written consent of the copyright owner.
+File Name  :Display.cs
+Description  :Display data from database to form.
+Log
+Date              Author        Comment
+15-05-2025        Pranav        Read the content from db and display it in the form.
+*/
+#endregion
+
+#region
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +21,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+#endregion
 
 //using System.Data;
 //using System.Data.SqlClient;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 using System.Data.SqlClient;
 
 namespace MyFormsApp

@@ -1,4 +1,17 @@
-﻿using System;
+﻿#region File Header
+/*
+Copyright Hodo. 2025
+All rights are reserved. Reproduction or transmission in whole or in part, in any form or by any means, electronic, mechanical or otherwise, is prohibited without the prior written consent of the copyright owner.
+File Name  :Create.cs
+Description  :Insert data from form to database.
+Log
+Date              Author        Comment
+15-05-2025        Pranav        Insert data entered through the form to database.
+*/
+#endregion
+
+#region Using
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +26,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+#endregion
 
 namespace MyFormsApp
 {
@@ -114,7 +128,7 @@ namespace MyFormsApp
             decimal cgpa = (gpObj.getPoint(cSharpComboBoxContent) + gpObj.getPoint(javaComboBoxContent) + gpObj.getPoint(phpComboBoxContent)) / 3;
             cgpa = (decimal)Math.Round(cgpa, 2);
             cgpaTextBox.Text = cgpa.ToString(); ;
-            Console.WriteLine("C# Grade is " + cSharpComboBoxContent + "\ncgpa = " + cgpa);
+            //Console.WriteLine("C# Grade is " + cSharpComboBoxContent + "\ncgpa = " + cgpa);
 
             if (string.IsNullOrWhiteSpace(nameTextBox.Text) ||
                 string.IsNullOrWhiteSpace(idTextBox.Text) ||
