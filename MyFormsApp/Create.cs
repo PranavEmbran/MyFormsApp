@@ -236,7 +236,7 @@ namespace MyFormsApp
     Id         INTEGER PRIMARY KEY AUTOINCREMENT,
     StudentId  TEXT    NOT NULL UNIQUE,  -- corresponds to `string id`
     Name       TEXT    NOT NULL,
-    DOB        TEXT    NOT NULL,
+    DOB        TEXT    NOT NULL DEFAULT '1900-01-01',
     Email      TEXT    NOT NULL UNIQUE,
     Phone      TEXT    NOT NULL,
     Gender     TEXT,
@@ -251,7 +251,7 @@ namespace MyFormsApp
                     cmd.ExecuteNonQuery();
                 }
 
-                //                // 1) Create table if missing
+                //1) Create table if missing
                 //                using (var cmd = conn.CreateCommand())
                 //                {
                 //                    cmd.CommandText = @"
