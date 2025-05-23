@@ -35,6 +35,7 @@
             this.updateBtn = new System.Windows.Forms.Button();
             this.deleteRowButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pdfBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pdfBtn);
             this.panel1.Controls.Add(this.filterByCGPALabel);
             this.panel1.Controls.Add(this.filterByCGPAComboBox);
             this.panel1.Controls.Add(this.updateBtn);
@@ -119,6 +121,16 @@
             this.label1.Text = "Student Course Details";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // pdfBtn
+            // 
+            this.pdfBtn.Location = new System.Drawing.Point(1033, 410);
+            this.pdfBtn.Name = "pdfBtn";
+            this.pdfBtn.Size = new System.Drawing.Size(75, 23);
+            this.pdfBtn.TabIndex = 6;
+            this.pdfBtn.Text = "PDF";
+            this.pdfBtn.UseVisualStyleBackColor = true;
+            this.pdfBtn.Click += new System.EventHandler(this.pdfBtn_Click);
+            // 
             // Display
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.ComboBox filterByCGPAComboBox;
         private System.Windows.Forms.Label filterByCGPALabel;
+        private System.Windows.Forms.Button pdfBtn;
     }
 }

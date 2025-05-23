@@ -21,6 +21,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+
 #endregion
 
 //using System.Data;
@@ -206,6 +207,12 @@ namespace MyFormsApp
         private void filterByGradeLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pdfBtn_Click(object sender, EventArgs e)
+        {
+            //MyFormsApp.GetDbinPdf.getPdf.GeneratePdf();
+            getPdf.GeneratePdf();
         }
     }
 }

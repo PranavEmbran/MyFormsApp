@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -12,6 +13,32 @@ class ClientProgram
             string serverIp = "127.0.0.1"; // Localhost (same machine)
             int port = 5000;
 
+            bool check = true;
+
+            while (check)
+            {
+                Console.WriteLine("Connect with:\n1] Localhost (127.0.0.1)\n2] Remote Host\nEnter 1 or 2: ");
+                int hostno = int.Parse(Console.ReadLine());
+
+                if (hostno == 1)
+                {
+                    check = false;
+                }
+                if (hostno == 2)
+                {
+                    Console.Write("Enter Server IP address: ");
+                    serverIp = Console.ReadLine();
+                    if (IPAddress.TryParse(serverIp, out IPAddress? ip) && ip != null)
+                    {
+                        Console.WriteLine("Valid IP address: " + ip);
+                        check = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid IP address.");
+                    }
+                }
+            }
             TcpClient client = new TcpClient(serverIp, port); // Connect to server
             Console.WriteLine("Connected to server!");
 
