@@ -26,7 +26,7 @@ class Program
         }
         if (revNum == numip)
         {
-            Console.WriteLine($"{numip} Pallindrome");
+            Console.WriteLine($"{numip} is a Pallindrome");
         }
         else
         {
