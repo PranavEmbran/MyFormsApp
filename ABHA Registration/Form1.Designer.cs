@@ -112,7 +112,7 @@
             // 
             // genOtpBtn
             // 
-            genOtpBtn.Location = new Point(332, 83);
+            genOtpBtn.Location = new Point(374, 83);
             genOtpBtn.Name = "genOtpBtn";
             genOtpBtn.Size = new Size(109, 23);
             genOtpBtn.TabIndex = 3;
