@@ -36,7 +36,6 @@
             mobHeadingLbl = new Label();
             abhaTabControl = new TabControl();
             mobTabPage = new TabPage();
-            mobOTP = new TabPage();
             aadharTabPage = new TabPage();
             panel1 = new Panel();
             label2 = new Label();
@@ -44,9 +43,7 @@
             textBox1 = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            aadharOTP = new TabPage();
             verifyTabPage = new TabPage();
-            verifyOTP = new TabPage();
             cancelTabPage = new TabPage();
             usingMobPanel.SuspendLayout();
             abhaTabControl.SuspendLayout();
@@ -121,11 +118,8 @@
             // abhaTabControl
             // 
             abhaTabControl.Controls.Add(mobTabPage);
-            abhaTabControl.Controls.Add(mobOTP);
             abhaTabControl.Controls.Add(aadharTabPage);
-            abhaTabControl.Controls.Add(aadharOTP);
             abhaTabControl.Controls.Add(verifyTabPage);
-            abhaTabControl.Controls.Add(verifyOTP);
             abhaTabControl.Controls.Add(cancelTabPage);
             abhaTabControl.Location = new Point(0, 0);
             abhaTabControl.Name = "abhaTabControl";
@@ -143,15 +137,6 @@
             mobTabPage.TabIndex = 0;
             mobTabPage.Text = "ABHA using Mobile";
             mobTabPage.UseVisualStyleBackColor = true;
-            // 
-            // mobOTP
-            // 
-            mobOTP.Location = new Point(4, 29);
-            mobOTP.Name = "mobOTP";
-            mobOTP.Size = new Size(600, 421);
-            mobOTP.TabIndex = 4;
-            mobOTP.Text = "mobOTP";
-            mobOTP.UseVisualStyleBackColor = true;
             // 
             // aadharTabPage
             // 
@@ -221,18 +206,9 @@
             label4.ForeColor = SystemColors.ActiveCaptionText;
             label4.Location = new Point(21, 49);
             label4.Name = "label4";
-            label4.Size = new Size(508, 25);
+            label4.Size = new Size(188, 25);
             label4.TabIndex = 0;
-            label4.Text = "Please Enter Your Mobile Number  Registered with ABHA";
-            // 
-            // aadharOTP
-            // 
-            aadharOTP.Location = new Point(4, 29);
-            aadharOTP.Name = "aadharOTP";
-            aadharOTP.Size = new Size(600, 421);
-            aadharOTP.TabIndex = 5;
-            aadharOTP.Text = "aadharOTP";
-            aadharOTP.UseVisualStyleBackColor = true;
+            label4.Text = "ABHA using Aadhar";
             // 
             // verifyTabPage
             // 
@@ -242,15 +218,6 @@
             verifyTabPage.TabIndex = 2;
             verifyTabPage.Text = "ABHA Verification";
             verifyTabPage.UseVisualStyleBackColor = true;
-            // 
-            // verifyOTP
-            // 
-            verifyOTP.Location = new Point(4, 29);
-            verifyOTP.Name = "verifyOTP";
-            verifyOTP.Size = new Size(600, 421);
-            verifyOTP.TabIndex = 6;
-            verifyOTP.Text = "verifyOTP";
-            verifyOTP.UseVisualStyleBackColor = true;
             // 
             // cancelTabPage
             // 
@@ -298,8 +265,5 @@
         private TextBox textBox1;
         private Label label3;
         private Label label4;
-        private TabPage mobOTP;
-        private TabPage aadharOTP;
-        private TabPage verifyOTP;
     }
 }
