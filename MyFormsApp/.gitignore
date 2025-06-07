@@ -1,0 +1,42 @@
+## Ignore Visual Studio temporary files, build results, and more
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+# bin/
+obj/
+[Bb]uild/
+[Ll]og/
+
+## NuGet Packages
+*.nupkg
+packages/
+*.snupkg
+
+## Visual Studio Code settings
+.vscode/
+
+## Others
+*.cache
+*.dbmdl
+*.pdb
+*.mdb
+*.bak
+*.log
+*.vspscc
+*.vssscc
+*.tmp
+*.tgz
+
+## Rider
+.idea/
+
+## Resharper
+*.DotSettings.user
+
+## Windows Forms designer files
+# *.resx
+# *.Designer.cs

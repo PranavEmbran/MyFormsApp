@@ -28,66 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            toolStrip1 = new ToolStrip();
-            registerMobBtn = new ToolStripButton();
-            registerAadharBtn = new ToolStripButton();
-            verifyBtn = new ToolStripButton();
-            cancelBtn = new ToolStripButton();
             usingMobPanel = new Panel();
             tenLbl = new Label();
             genOtpBtn = new Button();
             mobTxtBox = new TextBox();
             label1 = new Label();
             mobHeadingLbl = new Label();
-            toolStrip1.SuspendLayout();
+            abhaTabControl = new TabControl();
+            mobTabPage = new TabPage();
+            mobOTP = new TabPage();
+            aadharTabPage = new TabPage();
+            panel1 = new Panel();
+            label2 = new Label();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            aadharOTP = new TabPage();
+            verifyTabPage = new TabPage();
+            verifyOTP = new TabPage();
+            cancelTabPage = new TabPage();
             usingMobPanel.SuspendLayout();
+            abhaTabControl.SuspendLayout();
+            mobTabPage.SuspendLayout();
+            aadharTabPage.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { registerMobBtn, registerAadharBtn, verifyBtn, cancelBtn });
-            toolStrip1.Location = new Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(505, 25);
-            toolStrip1.TabIndex = 0;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // registerMobBtn
-            // 
-            registerMobBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            registerMobBtn.Image = (Image)resources.GetObject("registerMobBtn.Image");
-            registerMobBtn.ImageTransparentColor = Color.Magenta;
-            registerMobBtn.Name = "registerMobBtn";
-            registerMobBtn.Size = new Size(115, 22);
-            registerMobBtn.Text = "ABHA using Mobile";
-            // 
-            // registerAadharBtn
-            // 
-            registerAadharBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            registerAadharBtn.Image = (Image)resources.GetObject("registerAadharBtn.Image");
-            registerAadharBtn.ImageTransparentColor = Color.Magenta;
-            registerAadharBtn.Name = "registerAadharBtn";
-            registerAadharBtn.Size = new Size(116, 22);
-            registerAadharBtn.Text = "ABHA using Aadhar";
-            // 
-            // verifyBtn
-            // 
-            verifyBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            verifyBtn.Image = (Image)resources.GetObject("verifyBtn.Image");
-            verifyBtn.ImageTransparentColor = Color.Magenta;
-            verifyBtn.Name = "verifyBtn";
-            verifyBtn.Size = new Size(105, 22);
-            verifyBtn.Text = "ABHA Verification";
-            // 
-            // cancelBtn
-            // 
-            cancelBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            cancelBtn.Image = (Image)resources.GetObject("cancelBtn.Image");
-            cancelBtn.ImageTransparentColor = Color.Magenta;
-            cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(47, 22);
-            cancelBtn.Text = "Cancel";
             // 
             // usingMobPanel
             // 
@@ -96,87 +62,244 @@
             usingMobPanel.Controls.Add(mobTxtBox);
             usingMobPanel.Controls.Add(label1);
             usingMobPanel.Controls.Add(mobHeadingLbl);
-            usingMobPanel.Location = new Point(0, 28);
+            usingMobPanel.Location = new Point(6, 7);
+            usingMobPanel.Margin = new Padding(3, 4, 3, 4);
             usingMobPanel.Name = "usingMobPanel";
-            usingMobPanel.Size = new Size(503, 273);
+            usingMobPanel.Size = new Size(591, 410);
             usingMobPanel.TabIndex = 1;
             // 
             // tenLbl
             // 
             tenLbl.AutoSize = true;
             tenLbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenLbl.Location = new Point(293, 83);
+            tenLbl.Location = new Point(335, 111);
             tenLbl.Name = "tenLbl";
-            tenLbl.Size = new Size(0, 25);
+            tenLbl.Size = new Size(0, 32);
             tenLbl.TabIndex = 4;
             // 
             // genOtpBtn
             // 
-            genOtpBtn.Location = new Point(374, 83);
+            genOtpBtn.Location = new Point(427, 111);
+            genOtpBtn.Margin = new Padding(3, 4, 3, 4);
             genOtpBtn.Name = "genOtpBtn";
-            genOtpBtn.Size = new Size(109, 23);
+            genOtpBtn.Size = new Size(125, 31);
             genOtpBtn.TabIndex = 3;
             genOtpBtn.Text = "Generate OTP";
             genOtpBtn.UseVisualStyleBackColor = true;
+            genOtpBtn.Click += genOtpBtn_Click;
             // 
             // mobTxtBox
             // 
-            mobTxtBox.Location = new Point(127, 83);
+            mobTxtBox.Location = new Point(145, 111);
+            mobTxtBox.Margin = new Padding(3, 4, 3, 4);
             mobTxtBox.Name = "mobTxtBox";
             mobTxtBox.PlaceholderText = "Enter Mobile Number";
-            mobTxtBox.Size = new Size(160, 23);
+            mobTxtBox.Size = new Size(182, 27);
             mobTxtBox.TabIndex = 2;
             mobTxtBox.KeyPress += mobTxtBox_KeyPress;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 86);
+            label1.Location = new Point(27, 115);
             label1.Name = "label1";
-            label1.Size = new Size(69, 15);
+            label1.Size = new Size(87, 20);
             label1.TabIndex = 1;
             label1.Text = " Mobile No:";
             // 
             // mobHeadingLbl
             // 
             mobHeadingLbl.AutoSize = true;
-            mobHeadingLbl.Font = new Font("Imprint MT Shadow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            mobHeadingLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mobHeadingLbl.ForeColor = SystemColors.ActiveCaptionText;
-            mobHeadingLbl.Location = new Point(18, 37);
+            mobHeadingLbl.Location = new Point(21, 49);
             mobHeadingLbl.Name = "mobHeadingLbl";
-            mobHeadingLbl.Size = new Size(411, 19);
+            mobHeadingLbl.Size = new Size(508, 25);
             mobHeadingLbl.TabIndex = 0;
             mobHeadingLbl.Text = "Please Enter Your Mobile Number  Registered with ABHA";
             // 
+            // abhaTabControl
+            // 
+            abhaTabControl.Controls.Add(mobTabPage);
+            abhaTabControl.Controls.Add(mobOTP);
+            abhaTabControl.Controls.Add(aadharTabPage);
+            abhaTabControl.Controls.Add(aadharOTP);
+            abhaTabControl.Controls.Add(verifyTabPage);
+            abhaTabControl.Controls.Add(verifyOTP);
+            abhaTabControl.Controls.Add(cancelTabPage);
+            abhaTabControl.Location = new Point(0, 0);
+            abhaTabControl.Name = "abhaTabControl";
+            abhaTabControl.SelectedIndex = 0;
+            abhaTabControl.Size = new Size(608, 454);
+            abhaTabControl.TabIndex = 2;
+            // 
+            // mobTabPage
+            // 
+            mobTabPage.Controls.Add(usingMobPanel);
+            mobTabPage.Location = new Point(4, 29);
+            mobTabPage.Name = "mobTabPage";
+            mobTabPage.Padding = new Padding(3);
+            mobTabPage.Size = new Size(600, 421);
+            mobTabPage.TabIndex = 0;
+            mobTabPage.Text = "ABHA using Mobile";
+            mobTabPage.UseVisualStyleBackColor = true;
+            // 
+            // mobOTP
+            // 
+            mobOTP.Location = new Point(4, 29);
+            mobOTP.Name = "mobOTP";
+            mobOTP.Size = new Size(600, 421);
+            mobOTP.TabIndex = 4;
+            mobOTP.Text = "mobOTP";
+            mobOTP.UseVisualStyleBackColor = true;
+            // 
+            // aadharTabPage
+            // 
+            aadharTabPage.Controls.Add(panel1);
+            aadharTabPage.Location = new Point(4, 29);
+            aadharTabPage.Name = "aadharTabPage";
+            aadharTabPage.Padding = new Padding(3);
+            aadharTabPage.Size = new Size(600, 421);
+            aadharTabPage.TabIndex = 1;
+            aadharTabPage.Text = "ABHA using Aadhar";
+            aadharTabPage.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(3, 4);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(591, 410);
+            panel1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(335, 111);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 32);
+            label2.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(427, 111);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(125, 31);
+            button1.TabIndex = 3;
+            button1.Text = "Generate OTP";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(145, 111);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Enter Mobile Number";
+            textBox1.Size = new Size(182, 27);
+            textBox1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(27, 115);
+            label3.Name = "label3";
+            label3.Size = new Size(87, 20);
+            label3.TabIndex = 1;
+            label3.Text = " Mobile No:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(21, 49);
+            label4.Name = "label4";
+            label4.Size = new Size(508, 25);
+            label4.TabIndex = 0;
+            label4.Text = "Please Enter Your Mobile Number  Registered with ABHA";
+            // 
+            // aadharOTP
+            // 
+            aadharOTP.Location = new Point(4, 29);
+            aadharOTP.Name = "aadharOTP";
+            aadharOTP.Size = new Size(600, 421);
+            aadharOTP.TabIndex = 5;
+            aadharOTP.Text = "aadharOTP";
+            aadharOTP.UseVisualStyleBackColor = true;
+            // 
+            // verifyTabPage
+            // 
+            verifyTabPage.Location = new Point(4, 29);
+            verifyTabPage.Name = "verifyTabPage";
+            verifyTabPage.Size = new Size(600, 421);
+            verifyTabPage.TabIndex = 2;
+            verifyTabPage.Text = "ABHA Verification";
+            verifyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // verifyOTP
+            // 
+            verifyOTP.Location = new Point(4, 29);
+            verifyOTP.Name = "verifyOTP";
+            verifyOTP.Size = new Size(600, 421);
+            verifyOTP.TabIndex = 6;
+            verifyOTP.Text = "verifyOTP";
+            verifyOTP.UseVisualStyleBackColor = true;
+            // 
+            // cancelTabPage
+            // 
+            cancelTabPage.Location = new Point(4, 29);
+            cancelTabPage.Name = "cancelTabPage";
+            cancelTabPage.Size = new Size(600, 421);
+            cancelTabPage.TabIndex = 3;
+            cancelTabPage.Text = "Cancel";
+            cancelTabPage.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(505, 303);
-            Controls.Add(usingMobPanel);
-            Controls.Add(toolStrip1);
+            ClientSize = new Size(605, 453);
+            Controls.Add(abhaTabControl);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
             usingMobPanel.ResumeLayout(false);
             usingMobPanel.PerformLayout();
+            abhaTabControl.ResumeLayout(false);
+            mobTabPage.ResumeLayout(false);
+            aadharTabPage.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private ToolStrip toolStrip1;
-        private ToolStripButton registerMobBtn;
         private Panel usingMobPanel;
         private Label label1;
         private Label mobHeadingLbl;
-        private ToolStripButton registerAadharBtn;
         private Button genOtpBtn;
         private TextBox mobTxtBox;
-        private ToolStripButton verifyBtn;
-        private ToolStripButton cancelBtn;
         private Label tenLbl;
+        private TabControl abhaTabControl;
+        private TabPage mobTabPage;
+        private TabPage aadharTabPage;
+        private TabPage verifyTabPage;
+        private TabPage cancelTabPage;
+        private Panel panel1;
+        private Label label2;
+        private Button button1;
+        private TextBox textBox1;
+        private Label label3;
+        private Label label4;
+        private TabPage mobOTP;
+        private TabPage aadharOTP;
+        private TabPage verifyOTP;
     }
 }
