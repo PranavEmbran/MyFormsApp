@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            usingMobPanel = new Panel();
+            otpPanel = new Panel();
             tenLbl = new Label();
-            genOtpBtn = new Button();
+            verifyOtpBtn = new Button();
             otpTxtBox = new TextBox();
             otpLabel = new Label();
             otpHeadingLbl = new Label();
-            usingMobPanel.SuspendLayout();
+            otpPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // usingMobPanel
+            // otpPanel
             // 
-            usingMobPanel.Controls.Add(tenLbl);
-            usingMobPanel.Controls.Add(genOtpBtn);
-            usingMobPanel.Controls.Add(otpTxtBox);
-            usingMobPanel.Controls.Add(otpLabel);
-            usingMobPanel.Controls.Add(otpHeadingLbl);
-            usingMobPanel.Location = new Point(0, 0);
-            usingMobPanel.Margin = new Padding(3, 4, 3, 4);
-            usingMobPanel.Name = "usingMobPanel";
-            usingMobPanel.Size = new Size(591, 410);
-            usingMobPanel.TabIndex = 2;
+            otpPanel.Controls.Add(tenLbl);
+            otpPanel.Controls.Add(verifyOtpBtn);
+            otpPanel.Controls.Add(otpTxtBox);
+            otpPanel.Controls.Add(otpLabel);
+            otpPanel.Controls.Add(otpHeadingLbl);
+            otpPanel.Location = new Point(0, 0);
+            otpPanel.Margin = new Padding(3, 4, 3, 4);
+            otpPanel.Name = "otpPanel";
+            otpPanel.Size = new Size(591, 410);
+            otpPanel.TabIndex = 2;
             // 
             // tenLbl
             // 
@@ -59,15 +59,15 @@
             tenLbl.Size = new Size(0, 32);
             tenLbl.TabIndex = 4;
             // 
-            // genOtpBtn
+            // verifyOtpBtn
             // 
-            genOtpBtn.Location = new Point(427, 111);
-            genOtpBtn.Margin = new Padding(3, 4, 3, 4);
-            genOtpBtn.Name = "genOtpBtn";
-            genOtpBtn.Size = new Size(125, 31);
-            genOtpBtn.TabIndex = 3;
-            genOtpBtn.Text = "Verify OTP";
-            genOtpBtn.UseVisualStyleBackColor = true;
+            verifyOtpBtn.Location = new Point(427, 111);
+            verifyOtpBtn.Margin = new Padding(3, 4, 3, 4);
+            verifyOtpBtn.Name = "verifyOtpBtn";
+            verifyOtpBtn.Size = new Size(125, 31);
+            verifyOtpBtn.TabIndex = 3;
+            verifyOtpBtn.Text = "Verify OTP";
+            verifyOtpBtn.UseVisualStyleBackColor = true;
             // 
             // otpTxtBox
             // 
@@ -102,19 +102,19 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(usingMobPanel);
+            Controls.Add(otpPanel);
             Name = "OtpUserControl";
             Size = new Size(594, 414);
-            usingMobPanel.ResumeLayout(false);
-            usingMobPanel.PerformLayout();
+            otpPanel.ResumeLayout(false);
+            otpPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel usingMobPanel;
+        private Panel otpPanel;
         private Label tenLbl;
-        private Button genOtpBtn;
+        private Button verifyOtpBtn;
         private TextBox otpTxtBox;
         private Label otpLabel;
         private Label otpHeadingLbl;
