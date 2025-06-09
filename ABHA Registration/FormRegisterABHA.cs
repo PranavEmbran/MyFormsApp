@@ -11,6 +11,7 @@ Date              Author                 Comment
 #endregion
 
 #region Using
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 #endregion
 
@@ -25,6 +26,7 @@ namespace ABHA_Registration
 
 
         private OtpUserControl otpControl;
+
         private void otpDisplayUserControl(Panel panelObj)
         {
             //usingMobPanel.Visible = false;
@@ -44,21 +46,67 @@ namespace ABHA_Registration
 
         }
 
+        // method containing the regex
+        public static bool isValid(string str)
+        {
+            string strRegex = @"^(0|91)?[6-9][0-9]{9}$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(str))
+                return (true);
+            else
+                return (false);
+        }
+
 
         private void mobileMobTxtBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+
+
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (mobileMobTxtBox.Text.Length >= 10 && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
 
-                mobTenLbl.Text = "✅";
+                mobTenLbl.Text = mobTenLbl.Text = $"{mobileMobTxtBox.Text.Length} ✅"; 
                 mobTenLbl.ForeColor = System.Drawing.Color.Green;
+
+                //##########################################
+                // Input strings to Match
+                // valid mobile number
+                //string str = "347873923408";
+
+                string str = mobileMobTxtBox.Text;
+                if (isValid(str))
+                {
+                    Console.WriteLine("Valid Number");
+                    MessageBox.Show("Valid Number");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Number");
+                    MessageBox.Show("Invalid Number");
+
+                }
+
+                //##########################################
+
                 return;
             }
             else
             {
                 mobTenLbl.Text = "";
             }
+
+
+
+
         }
 
         private void mobileGenOtpBtn_Click(object sender, EventArgs e)

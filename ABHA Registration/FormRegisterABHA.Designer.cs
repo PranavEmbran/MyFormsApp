@@ -69,27 +69,25 @@
             usingMobPanel.Controls.Add(mobileMobTxtBox);
             usingMobPanel.Controls.Add(mobileMobLbl);
             usingMobPanel.Controls.Add(mobHeadingLbl);
-            usingMobPanel.Location = new Point(6, 7);
-            usingMobPanel.Margin = new Padding(3, 4, 3, 4);
+            usingMobPanel.Location = new Point(5, 5);
             usingMobPanel.Name = "usingMobPanel";
-            usingMobPanel.Size = new Size(591, 410);
+            usingMobPanel.Size = new Size(517, 308);
             usingMobPanel.TabIndex = 1;
             // 
             // mobTenLbl
             // 
             mobTenLbl.AutoSize = true;
             mobTenLbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            mobTenLbl.Location = new Point(335, 111);
+            mobTenLbl.Location = new Point(293, 83);
             mobTenLbl.Name = "mobTenLbl";
-            mobTenLbl.Size = new Size(0, 32);
+            mobTenLbl.Size = new Size(0, 25);
             mobTenLbl.TabIndex = 4;
             // 
             // mobileGenOtpBtn
             // 
-            mobileGenOtpBtn.Location = new Point(427, 111);
-            mobileGenOtpBtn.Margin = new Padding(3, 4, 3, 4);
+            mobileGenOtpBtn.Location = new Point(374, 83);
             mobileGenOtpBtn.Name = "mobileGenOtpBtn";
-            mobileGenOtpBtn.Size = new Size(125, 31);
+            mobileGenOtpBtn.Size = new Size(109, 23);
             mobileGenOtpBtn.TabIndex = 3;
             mobileGenOtpBtn.Text = "Generate OTP";
             mobileGenOtpBtn.UseVisualStyleBackColor = true;
@@ -97,20 +95,19 @@
             // 
             // mobileMobTxtBox
             // 
-            mobileMobTxtBox.Location = new Point(145, 111);
-            mobileMobTxtBox.Margin = new Padding(3, 4, 3, 4);
+            mobileMobTxtBox.Location = new Point(127, 83);
             mobileMobTxtBox.Name = "mobileMobTxtBox";
             mobileMobTxtBox.PlaceholderText = "Enter Mobile Number";
-            mobileMobTxtBox.Size = new Size(182, 27);
+            mobileMobTxtBox.Size = new Size(160, 23);
             mobileMobTxtBox.TabIndex = 2;
             mobileMobTxtBox.KeyPress += mobileMobTxtBox_KeyPress;
             // 
             // mobileMobLbl
             // 
             mobileMobLbl.AutoSize = true;
-            mobileMobLbl.Location = new Point(27, 115);
+            mobileMobLbl.Location = new Point(24, 86);
             mobileMobLbl.Name = "mobileMobLbl";
-            mobileMobLbl.Size = new Size(87, 20);
+            mobileMobLbl.Size = new Size(69, 15);
             mobileMobLbl.TabIndex = 1;
             mobileMobLbl.Text = " Mobile No:";
             // 
@@ -119,9 +116,9 @@
             mobHeadingLbl.AutoSize = true;
             mobHeadingLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mobHeadingLbl.ForeColor = SystemColors.ActiveCaptionText;
-            mobHeadingLbl.Location = new Point(21, 49);
+            mobHeadingLbl.Location = new Point(18, 37);
             mobHeadingLbl.Name = "mobHeadingLbl";
-            mobHeadingLbl.Size = new Size(508, 25);
+            mobHeadingLbl.Size = new Size(415, 20);
             mobHeadingLbl.TabIndex = 0;
             mobHeadingLbl.Text = "Please Enter Your Mobile Number  Registered with ABHA";
             // 
@@ -132,18 +129,20 @@
             abhaTabControl.Controls.Add(verifyTabPage);
             abhaTabControl.Controls.Add(cancelTabPage);
             abhaTabControl.Location = new Point(0, 0);
+            abhaTabControl.Margin = new Padding(3, 2, 3, 2);
             abhaTabControl.Name = "abhaTabControl";
             abhaTabControl.SelectedIndex = 0;
-            abhaTabControl.Size = new Size(608, 454);
+            abhaTabControl.Size = new Size(532, 340);
             abhaTabControl.TabIndex = 2;
             // 
             // mobTabPage
             // 
             mobTabPage.Controls.Add(usingMobPanel);
-            mobTabPage.Location = new Point(4, 29);
+            mobTabPage.Location = new Point(4, 24);
+            mobTabPage.Margin = new Padding(3, 2, 3, 2);
             mobTabPage.Name = "mobTabPage";
-            mobTabPage.Padding = new Padding(3);
-            mobTabPage.Size = new Size(600, 421);
+            mobTabPage.Padding = new Padding(3, 2, 3, 2);
+            mobTabPage.Size = new Size(524, 312);
             mobTabPage.TabIndex = 0;
             mobTabPage.Text = "ABHA using Mobile";
             mobTabPage.UseVisualStyleBackColor = true;
@@ -151,10 +150,11 @@
             // aadharTabPage
             // 
             aadharTabPage.Controls.Add(usingAadharPanel);
-            aadharTabPage.Location = new Point(4, 29);
+            aadharTabPage.Location = new Point(4, 24);
+            aadharTabPage.Margin = new Padding(3, 2, 3, 2);
             aadharTabPage.Name = "aadharTabPage";
-            aadharTabPage.Padding = new Padding(3);
-            aadharTabPage.Size = new Size(600, 421);
+            aadharTabPage.Padding = new Padding(3, 2, 3, 2);
+            aadharTabPage.Size = new Size(524, 312);
             aadharTabPage.TabIndex = 1;
             aadharTabPage.Text = "ABHA using Aadhar";
             aadharTabPage.UseVisualStyleBackColor = true;
@@ -168,27 +168,25 @@
             usingAadharPanel.Controls.Add(aadharMobTxtBox);
             usingAadharPanel.Controls.Add(aadharMobLbl);
             usingAadharPanel.Controls.Add(aadharHeadingLbl);
-            usingAadharPanel.Location = new Point(3, 4);
-            usingAadharPanel.Margin = new Padding(3, 4, 3, 4);
+            usingAadharPanel.Location = new Point(3, 3);
             usingAadharPanel.Name = "usingAadharPanel";
-            usingAadharPanel.Size = new Size(591, 410);
+            usingAadharPanel.Size = new Size(517, 308);
             usingAadharPanel.TabIndex = 3;
             // 
             // aadharTxtBox
             // 
-            aadharTxtBox.Location = new Point(145, 159);
-            aadharTxtBox.Margin = new Padding(3, 4, 3, 4);
+            aadharTxtBox.Location = new Point(127, 119);
             aadharTxtBox.Name = "aadharTxtBox";
             aadharTxtBox.PlaceholderText = "Enter Aadhar Number";
-            aadharTxtBox.Size = new Size(182, 27);
+            aadharTxtBox.Size = new Size(160, 23);
             aadharTxtBox.TabIndex = 6;
             // 
             // aadharTxtField
             // 
             aadharTxtField.AutoSize = true;
-            aadharTxtField.Location = new Point(27, 163);
+            aadharTxtField.Location = new Point(24, 122);
             aadharTxtField.Name = "aadharTxtField";
-            aadharTxtField.Size = new Size(84, 20);
+            aadharTxtField.Size = new Size(67, 15);
             aadharTxtField.TabIndex = 5;
             aadharTxtField.Text = "Aadhar No:";
             // 
@@ -196,17 +194,16 @@
             // 
             aadharTenLbl.AutoSize = true;
             aadharTenLbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            aadharTenLbl.Location = new Point(335, 111);
+            aadharTenLbl.Location = new Point(293, 83);
             aadharTenLbl.Name = "aadharTenLbl";
-            aadharTenLbl.Size = new Size(0, 32);
+            aadharTenLbl.Size = new Size(0, 25);
             aadharTenLbl.TabIndex = 4;
             // 
             // aadharGenOtpBtn
             // 
-            aadharGenOtpBtn.Location = new Point(427, 111);
-            aadharGenOtpBtn.Margin = new Padding(3, 4, 3, 4);
+            aadharGenOtpBtn.Location = new Point(374, 83);
             aadharGenOtpBtn.Name = "aadharGenOtpBtn";
-            aadharGenOtpBtn.Size = new Size(125, 31);
+            aadharGenOtpBtn.Size = new Size(109, 23);
             aadharGenOtpBtn.TabIndex = 3;
             aadharGenOtpBtn.Text = "Generate OTP";
             aadharGenOtpBtn.UseVisualStyleBackColor = true;
@@ -214,20 +211,19 @@
             // 
             // aadharMobTxtBox
             // 
-            aadharMobTxtBox.Location = new Point(145, 111);
-            aadharMobTxtBox.Margin = new Padding(3, 4, 3, 4);
+            aadharMobTxtBox.Location = new Point(127, 83);
             aadharMobTxtBox.Name = "aadharMobTxtBox";
             aadharMobTxtBox.PlaceholderText = "Enter Mobile Number";
-            aadharMobTxtBox.Size = new Size(182, 27);
+            aadharMobTxtBox.Size = new Size(160, 23);
             aadharMobTxtBox.TabIndex = 2;
             aadharMobTxtBox.KeyPress += aadharMobTxtBox_KeyPress;
             // 
             // aadharMobLbl
             // 
             aadharMobLbl.AutoSize = true;
-            aadharMobLbl.Location = new Point(27, 115);
+            aadharMobLbl.Location = new Point(24, 86);
             aadharMobLbl.Name = "aadharMobLbl";
-            aadharMobLbl.Size = new Size(87, 20);
+            aadharMobLbl.Size = new Size(69, 15);
             aadharMobLbl.TabIndex = 1;
             aadharMobLbl.Text = " Mobile No:";
             // 
@@ -236,18 +232,19 @@
             aadharHeadingLbl.AutoSize = true;
             aadharHeadingLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aadharHeadingLbl.ForeColor = SystemColors.ActiveCaptionText;
-            aadharHeadingLbl.Location = new Point(21, 49);
+            aadharHeadingLbl.Location = new Point(18, 37);
             aadharHeadingLbl.Name = "aadharHeadingLbl";
-            aadharHeadingLbl.Size = new Size(188, 25);
+            aadharHeadingLbl.Size = new Size(152, 20);
             aadharHeadingLbl.TabIndex = 0;
             aadharHeadingLbl.Text = "ABHA using Aadhar";
             // 
             // verifyTabPage
             // 
             verifyTabPage.Controls.Add(verifyPanel);
-            verifyTabPage.Location = new Point(4, 29);
+            verifyTabPage.Location = new Point(4, 24);
+            verifyTabPage.Margin = new Padding(3, 2, 3, 2);
             verifyTabPage.Name = "verifyTabPage";
-            verifyTabPage.Size = new Size(600, 421);
+            verifyTabPage.Size = new Size(524, 312);
             verifyTabPage.TabIndex = 2;
             verifyTabPage.Text = "ABHA Verification";
             verifyTabPage.UseVisualStyleBackColor = true;
@@ -259,27 +256,25 @@
             verifyPanel.Controls.Add(verifyMobTxtBox);
             verifyPanel.Controls.Add(verifyMobLbl);
             verifyPanel.Controls.Add(verifyHeadingLbl);
-            verifyPanel.Location = new Point(5, 5);
-            verifyPanel.Margin = new Padding(3, 4, 3, 4);
+            verifyPanel.Location = new Point(4, 4);
             verifyPanel.Name = "verifyPanel";
-            verifyPanel.Size = new Size(591, 410);
+            verifyPanel.Size = new Size(517, 308);
             verifyPanel.TabIndex = 2;
             // 
             // verifyTenLabel
             // 
             verifyTenLabel.AutoSize = true;
             verifyTenLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            verifyTenLabel.Location = new Point(335, 111);
+            verifyTenLabel.Location = new Point(293, 83);
             verifyTenLabel.Name = "verifyTenLabel";
-            verifyTenLabel.Size = new Size(0, 32);
+            verifyTenLabel.Size = new Size(0, 25);
             verifyTenLabel.TabIndex = 4;
             // 
             // verifyGenOtpBtn
             // 
-            verifyGenOtpBtn.Location = new Point(427, 111);
-            verifyGenOtpBtn.Margin = new Padding(3, 4, 3, 4);
+            verifyGenOtpBtn.Location = new Point(374, 83);
             verifyGenOtpBtn.Name = "verifyGenOtpBtn";
-            verifyGenOtpBtn.Size = new Size(125, 31);
+            verifyGenOtpBtn.Size = new Size(109, 23);
             verifyGenOtpBtn.TabIndex = 3;
             verifyGenOtpBtn.Text = "Generate OTP";
             verifyGenOtpBtn.UseVisualStyleBackColor = true;
@@ -287,19 +282,18 @@
             // 
             // verifyMobTxtBox
             // 
-            verifyMobTxtBox.Location = new Point(145, 111);
-            verifyMobTxtBox.Margin = new Padding(3, 4, 3, 4);
+            verifyMobTxtBox.Location = new Point(127, 83);
             verifyMobTxtBox.Name = "verifyMobTxtBox";
             verifyMobTxtBox.PlaceholderText = "Enter ABHA Address";
-            verifyMobTxtBox.Size = new Size(182, 27);
+            verifyMobTxtBox.Size = new Size(160, 23);
             verifyMobTxtBox.TabIndex = 2;
             // 
             // verifyMobLbl
             // 
             verifyMobLbl.AutoSize = true;
-            verifyMobLbl.Location = new Point(27, 115);
+            verifyMobLbl.Location = new Point(24, 86);
             verifyMobLbl.Name = "verifyMobLbl";
-            verifyMobLbl.Size = new Size(106, 20);
+            verifyMobLbl.Size = new Size(84, 15);
             verifyMobLbl.TabIndex = 1;
             verifyMobLbl.Text = "ABHA Address";
             // 
@@ -308,28 +302,28 @@
             verifyHeadingLbl.AutoSize = true;
             verifyHeadingLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             verifyHeadingLbl.ForeColor = SystemColors.ActiveCaptionText;
-            verifyHeadingLbl.Location = new Point(21, 49);
+            verifyHeadingLbl.Location = new Point(18, 37);
             verifyHeadingLbl.Name = "verifyHeadingLbl";
-            verifyHeadingLbl.Size = new Size(307, 25);
+            verifyHeadingLbl.Size = new Size(250, 20);
             verifyHeadingLbl.TabIndex = 0;
             verifyHeadingLbl.Text = "Please Enter Your ABHA Address";
             // 
             // cancelTabPage
             // 
-            cancelTabPage.Location = new Point(4, 29);
+            cancelTabPage.Location = new Point(4, 24);
+            cancelTabPage.Margin = new Padding(3, 2, 3, 2);
             cancelTabPage.Name = "cancelTabPage";
-            cancelTabPage.Size = new Size(600, 421);
+            cancelTabPage.Size = new Size(524, 312);
             cancelTabPage.TabIndex = 3;
             cancelTabPage.Text = "Cancel";
             cancelTabPage.UseVisualStyleBackColor = true;
             // 
             // abhaRegisterForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(605, 453);
+            ClientSize = new Size(529, 340);
             Controls.Add(abhaTabControl);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "abhaRegisterForm";
             Text = "ABHA Registration";
             usingMobPanel.ResumeLayout(false);
