@@ -39,51 +39,49 @@
             // 
             // otpPanel
             // 
+            otpPanel.BorderStyle = BorderStyle.Fixed3D;
             otpPanel.Controls.Add(tenLbl);
             otpPanel.Controls.Add(verifyOtpBtn);
             otpPanel.Controls.Add(otpTxtBox);
             otpPanel.Controls.Add(otpLabel);
             otpPanel.Controls.Add(otpHeadingLbl);
             otpPanel.Location = new Point(0, 0);
-            otpPanel.Margin = new Padding(3, 4, 3, 4);
             otpPanel.Name = "otpPanel";
-            otpPanel.Size = new Size(591, 410);
+            otpPanel.Size = new Size(517, 308);
             otpPanel.TabIndex = 2;
             // 
             // tenLbl
             // 
             tenLbl.AutoSize = true;
             tenLbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tenLbl.Location = new Point(335, 111);
+            tenLbl.Location = new Point(293, 83);
             tenLbl.Name = "tenLbl";
-            tenLbl.Size = new Size(0, 32);
+            tenLbl.Size = new Size(0, 25);
             tenLbl.TabIndex = 4;
             // 
             // verifyOtpBtn
             // 
-            verifyOtpBtn.Location = new Point(427, 111);
-            verifyOtpBtn.Margin = new Padding(3, 4, 3, 4);
+            verifyOtpBtn.Location = new Point(374, 83);
             verifyOtpBtn.Name = "verifyOtpBtn";
-            verifyOtpBtn.Size = new Size(125, 31);
+            verifyOtpBtn.Size = new Size(109, 23);
             verifyOtpBtn.TabIndex = 3;
             verifyOtpBtn.Text = "Verify OTP";
             verifyOtpBtn.UseVisualStyleBackColor = true;
             // 
             // otpTxtBox
             // 
-            otpTxtBox.Location = new Point(145, 111);
-            otpTxtBox.Margin = new Padding(3, 4, 3, 4);
+            otpTxtBox.Location = new Point(127, 83);
             otpTxtBox.Name = "otpTxtBox";
             otpTxtBox.PlaceholderText = "Enter OTP";
-            otpTxtBox.Size = new Size(182, 27);
+            otpTxtBox.Size = new Size(160, 23);
             otpTxtBox.TabIndex = 2;
             // 
             // otpLabel
             // 
             otpLabel.AutoSize = true;
-            otpLabel.Location = new Point(27, 115);
+            otpLabel.Location = new Point(24, 86);
             otpLabel.Name = "otpLabel";
-            otpLabel.Size = new Size(35, 20);
+            otpLabel.Size = new Size(29, 15);
             otpLabel.TabIndex = 1;
             otpLabel.Text = "OTP";
             // 
@@ -92,19 +90,20 @@
             otpHeadingLbl.AutoSize = true;
             otpHeadingLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             otpHeadingLbl.ForeColor = SystemColors.ActiveCaptionText;
-            otpHeadingLbl.Location = new Point(21, 49);
+            otpHeadingLbl.Location = new Point(18, 37);
             otpHeadingLbl.Name = "otpHeadingLbl";
-            otpHeadingLbl.Size = new Size(170, 25);
+            otpHeadingLbl.Size = new Size(135, 20);
             otpHeadingLbl.TabIndex = 0;
             otpHeadingLbl.Text = "Please Enter OTP";
             // 
             // OtpUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(otpPanel);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "OtpUserControl";
-            Size = new Size(594, 414);
+            Size = new Size(520, 310);
             otpPanel.ResumeLayout(false);
             otpPanel.PerformLayout();
             ResumeLayout(false);

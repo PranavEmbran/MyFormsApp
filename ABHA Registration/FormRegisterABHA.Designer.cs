@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(abhaRegisterForm));
             usingMobPanel = new Panel();
             mobTenLbl = new Label();
             mobileGenOtpBtn = new Button();
@@ -49,10 +50,11 @@
             verifyPanel = new Panel();
             verifyTenLabel = new Label();
             verifyGenOtpBtn = new Button();
-            verifyMobTxtBox = new TextBox();
+            verifyTxtBox = new TextBox();
             verifyMobLbl = new Label();
             verifyHeadingLbl = new Label();
             cancelTabPage = new TabPage();
+            pictureBox1 = new PictureBox();
             usingMobPanel.SuspendLayout();
             abhaTabControl.SuspendLayout();
             mobTabPage.SuspendLayout();
@@ -60,10 +62,14 @@
             usingAadharPanel.SuspendLayout();
             verifyTabPage.SuspendLayout();
             verifyPanel.SuspendLayout();
+            cancelTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // usingMobPanel
             // 
+            usingMobPanel.BackColor = Color.Transparent;
+            usingMobPanel.BorderStyle = BorderStyle.Fixed3D;
             usingMobPanel.Controls.Add(mobTenLbl);
             usingMobPanel.Controls.Add(mobileGenOtpBtn);
             usingMobPanel.Controls.Add(mobileMobTxtBox);
@@ -85,12 +91,17 @@
             // 
             // mobileGenOtpBtn
             // 
+            mobileGenOtpBtn.BackColor = Color.Silver;
+            mobileGenOtpBtn.Cursor = Cursors.Hand;
+            mobileGenOtpBtn.Enabled = false;
+            mobileGenOtpBtn.FlatAppearance.MouseOverBackColor = Color.Gray;
+            mobileGenOtpBtn.FlatStyle = FlatStyle.System;
             mobileGenOtpBtn.Location = new Point(374, 83);
             mobileGenOtpBtn.Name = "mobileGenOtpBtn";
             mobileGenOtpBtn.Size = new Size(109, 23);
             mobileGenOtpBtn.TabIndex = 3;
             mobileGenOtpBtn.Text = "Generate OTP";
-            mobileGenOtpBtn.UseVisualStyleBackColor = true;
+            mobileGenOtpBtn.UseVisualStyleBackColor = false;
             mobileGenOtpBtn.Click += mobileGenOtpBtn_Click;
             // 
             // mobileMobTxtBox
@@ -134,6 +145,7 @@
             abhaTabControl.SelectedIndex = 0;
             abhaTabControl.Size = new Size(532, 340);
             abhaTabControl.TabIndex = 2;
+            abhaTabControl.MouseClick += abhaTabControl_MouseClick;
             // 
             // mobTabPage
             // 
@@ -161,6 +173,8 @@
             // 
             // usingAadharPanel
             // 
+            usingAadharPanel.BackColor = Color.Transparent;
+            usingAadharPanel.BorderStyle = BorderStyle.Fixed3D;
             usingAadharPanel.Controls.Add(aadharTxtBox);
             usingAadharPanel.Controls.Add(aadharTxtField);
             usingAadharPanel.Controls.Add(aadharTenLbl);
@@ -201,6 +215,7 @@
             // 
             // aadharGenOtpBtn
             // 
+            aadharGenOtpBtn.FlatStyle = FlatStyle.System;
             aadharGenOtpBtn.Location = new Point(374, 83);
             aadharGenOtpBtn.Name = "aadharGenOtpBtn";
             aadharGenOtpBtn.Size = new Size(109, 23);
@@ -251,9 +266,11 @@
             // 
             // verifyPanel
             // 
+            verifyPanel.BackColor = Color.Transparent;
+            verifyPanel.BorderStyle = BorderStyle.Fixed3D;
             verifyPanel.Controls.Add(verifyTenLabel);
             verifyPanel.Controls.Add(verifyGenOtpBtn);
-            verifyPanel.Controls.Add(verifyMobTxtBox);
+            verifyPanel.Controls.Add(verifyTxtBox);
             verifyPanel.Controls.Add(verifyMobLbl);
             verifyPanel.Controls.Add(verifyHeadingLbl);
             verifyPanel.Location = new Point(4, 4);
@@ -272,6 +289,7 @@
             // 
             // verifyGenOtpBtn
             // 
+            verifyGenOtpBtn.FlatStyle = FlatStyle.System;
             verifyGenOtpBtn.Location = new Point(374, 83);
             verifyGenOtpBtn.Name = "verifyGenOtpBtn";
             verifyGenOtpBtn.Size = new Size(109, 23);
@@ -280,13 +298,14 @@
             verifyGenOtpBtn.UseVisualStyleBackColor = true;
             verifyGenOtpBtn.Click += verifyGenOtpBtn_Click;
             // 
-            // verifyMobTxtBox
+            // verifyTxtBox
             // 
-            verifyMobTxtBox.Location = new Point(127, 83);
-            verifyMobTxtBox.Name = "verifyMobTxtBox";
-            verifyMobTxtBox.PlaceholderText = "Enter ABHA Address";
-            verifyMobTxtBox.Size = new Size(160, 23);
-            verifyMobTxtBox.TabIndex = 2;
+            verifyTxtBox.BackColor = SystemColors.Window;
+            verifyTxtBox.Location = new Point(127, 83);
+            verifyTxtBox.Name = "verifyTxtBox";
+            verifyTxtBox.PlaceholderText = "Enter ABHA Address";
+            verifyTxtBox.Size = new Size(160, 23);
+            verifyTxtBox.TabIndex = 2;
             // 
             // verifyMobLbl
             // 
@@ -310,13 +329,26 @@
             // 
             // cancelTabPage
             // 
+            cancelTabPage.BackColor = Color.Transparent;
+            cancelTabPage.Controls.Add(pictureBox1);
             cancelTabPage.Location = new Point(4, 24);
             cancelTabPage.Margin = new Padding(3, 2, 3, 2);
             cancelTabPage.Name = "cancelTabPage";
             cancelTabPage.Size = new Size(524, 312);
             cancelTabPage.TabIndex = 3;
-            cancelTabPage.Text = "Cancel";
-            cancelTabPage.UseVisualStyleBackColor = true;
+            cancelTabPage.Text = "Reset";
+            cancelTabPage.MouseClick += cancelTabPage_MouseClick;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.ImageLocation = "";
+            pictureBox1.Location = new Point(110, 61);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(296, 183);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // abhaRegisterForm
             // 
@@ -336,6 +368,8 @@
             verifyTabPage.ResumeLayout(false);
             verifyPanel.ResumeLayout(false);
             verifyPanel.PerformLayout();
+            cancelTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
 
 
@@ -364,8 +398,9 @@
         private Panel verifyPanel;
         private Label verifyTenLabel;
         private Button verifyGenOtpBtn;
-        private TextBox verifyMobTxtBox;
+        private TextBox verifyTxtBox;
         private Label verifyMobLbl;
         private Label verifyHeadingLbl;
+        private PictureBox pictureBox1;
     }
 }
