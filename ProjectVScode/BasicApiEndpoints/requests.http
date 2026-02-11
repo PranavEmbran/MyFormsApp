@@ -1,0 +1,14 @@
+GET http://localhost:5058
+
+###
+
+GET http://localhost:5058/downloads
+
+###
+PUT http://localhost:5058
+
+###
+DELETE http://localhost:5058
+
+###
+POST http://localhost:5058
